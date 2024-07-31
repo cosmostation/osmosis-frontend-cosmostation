@@ -5,6 +5,7 @@ import path from "node:path";
 import { cdcwalletExtensionInfo } from "@cosmos-kit/cdcwallet-extension";
 import { Wallet as DefaultWallet } from "@cosmos-kit/core";
 import { cosmostationExtensionInfo } from "@cosmos-kit/cosmostation-extension";
+import { cosmostationMobileInfo } from "@cosmos-kit/cosmostation-mobile";
 import { keplrExtensionInfo } from "@cosmos-kit/keplr-extension";
 import { keplrMobileInfo } from "@cosmos-kit/keplr-mobile";
 import { leapExtensionInfo } from "@cosmos-kit/leap-extension";
@@ -36,6 +37,7 @@ const CosmosKitWalletList: Wallet[] = [
   trustExtensionInfo,
   xdefiExtensionInfo,
   cosmostationExtensionInfo,
+  cosmostationMobileInfo,
   stationExtensionInfo,
   cdcwalletExtensionInfo,
 ];
@@ -134,6 +136,7 @@ async function generateCosmosKitWalletList() {
   }
 }
 
+console.log("Generating Cosmos Kit Wallet List...");
 generateCosmosKitWalletList().catch((e) => {
   console.error(e);
   process.exit(1);
